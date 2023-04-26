@@ -1,14 +1,6 @@
-form .models import Palauteosio
-                
-class Palauteosio(LoginRequiredMixin, CreateView):
-    model = Palauteosiotemplate_name = 
-    fields = [`hyvä`, `huono`, `ideat`]
-    success_url = `Kiitos/`
+sisaankirjautuminen = [
 
-class Palauteosioasetukset(form, Form):
-    hyvä = forms.CharField(label=`hyvä`, max_lenght=1000, widget=widgets.Textarea)
-    huono = forms.CharField(label=`huono`, max_lenght=1000, widget=widgets.Textarea)
-    ideat = forms.CharField(label=`ideat`, max_lenght=1000, widget=widgets.Textarea)
-
-
-    @login_required(login_url=`/login/´)
+    .path(`login/`, auth_views.LoginView.as_view(),name=`login`),
+    .path(`logout/`, auth_views.LogoutView.as_view(),name=`logout`),
+    .path(`signup/`, auth_views.signup, name=`signup`),
+]
